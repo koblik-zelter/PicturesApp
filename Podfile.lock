@@ -81,6 +81,7 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.3.0)
   - leveldb-library (1.22)
+  - lottie-ios (3.1.5)
   - MaterialComponents/AnimationTiming (94.2.0)
   - MaterialComponents/Chips (94.2.0):
     - MaterialComponents/Elevation
@@ -142,6 +143,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - FlagPhoneNumber
+  - lottie-ios
   - MaterialComponents/Chips
   - SkyFloatingLabelTextField (~> 3.0)
 
@@ -163,6 +165,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
+    - lottie-ios
     - MaterialComponents
     - MDFInternationalization
     - nanopb
@@ -185,11 +188,12 @@ SPEC CHECKSUMS:
   GoogleUtilities: 547a86735c6f0ee30ad17e94df4fc21f616b71cb
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
   MaterialComponents: ddaf6964e9bc429fc228fa46344e406c976cd85c
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
 
-PODFILE CHECKSUM: 4d578257bce19742175e5eef45280f98037af6a4
+PODFILE CHECKSUM: 82b9396ac652cb6090360737c57590850d1d34c5
 
 COCOAPODS: 1.8.3

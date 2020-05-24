@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     private let signInButton: AuthButton = {
         let button = AuthButton(title: "Sign In")
         button.backgroundColor = .init(red: 124/255, green: 158/255, blue: 169/255, alpha: 1)
-        button.addTarget(self, action: #selector(signUp), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signIn), for: .touchUpInside)
         return button
     }()
     
@@ -122,6 +122,19 @@ class ViewController: UIViewController {
     @objc private func signUp() {
         let vc = SignUpViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc private func signIn() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        AuthFacade.shared.auth(email: email, password: password) { (err) in
+            if let error = err {
+                self.showAlert(title: "Authentication Error", message: error.localizedDescription, action: "Ok")
+                return
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
 }

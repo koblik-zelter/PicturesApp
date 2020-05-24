@@ -14,7 +14,7 @@ class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUser()
-        // Do any additional setup after loading the view.
+        self.setupViews()
     }
     
     private func setupUser() {
@@ -26,24 +26,25 @@ class MainTabBarViewController: UITabBarController {
                 navController.isNavigationBarHidden = true
                 self.present(navController, animated: true)
             }
-            return
         }
-        else { print(Auth.auth().currentUser?.uid) }
+//        else { print(Auth.auth().currentUser?.uid) }
     }
     
     private func setupViews() {
-        let homeController = ViewController()
+        let homeController = PopularViewController()
         let homeNavController = UINavigationController(rootViewController: homeController)
         homeNavController.tabBarItem.title = "home"
 //        homeNavController.tabBarItem.image = UIImage(named: "home-0")
-        let searchController = ViewController()
-        searchController.tabBarItem.title = "home"
+        let searchController = SearchViewController()
         let searchNavController = UINavigationController(rootViewController: searchController)
+        searchNavController.tabBarItem.title = "search"
+
 //        searchNavController.tabBarItem.image = UIImage(named: "cooking")
         
-        let savedController = ViewController()
-        savedController.tabBarItem.title = "home"
+        let savedController = PopularViewController()
         let savedNavController = UINavigationController(rootViewController: savedController)
+        savedNavController.tabBarItem.title = "saved"
+
 //        savedNavController.tabBarItem.image = UIImage(named: "pin")
         
         //        let aboutUsController = AboutUsViewController()

@@ -3,4 +3,230 @@
    uuid = "F9339F4E-9B66-4B62-A626-EC932CE7CB22"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "924D51BD-D859-473F-93DD-D9D106A6279B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicturesApp/Controllers/CircleAnimationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "stopAnimation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19A488DF-5E6B-4226-858D-8100C4A124D9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicturesApp/ViewControllerExtensions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "dismissAnimation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "474DAB66-6CFF-45AE-B4E0-2B92B1369BFA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicturesApp/ViewControllerExtensions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "dismissAnimation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EAB8B5F8-5A73-43E9-972E-9CE804D6BFAF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicturesApp/Controllers/UserViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B6A2EF4-CB54-4B34-87FB-39DC787FF203"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicturesApp/Controllers/Search/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "searchPictures(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7B6A2EF4-CB54-4B34-87FB-39DC787FF203 - aa5d53b00364c0ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PicturesApp.SearchViewController.(searchPictures in _95BA883D2095A12023DC6790A70FFFB4)(Swift.String) -&gt; ()"
+                  moduleName = "PicturesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexkoblik-zelter/Desktop/TI/PicturesApp/PicturesApp/Controllers/Search/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  uuid = "7B6A2EF4-CB54-4B34-87FB-39DC787FF203 - 7ab1e7c5f6c539db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;PicturesApp.Picture&gt;) -&gt; () in PicturesApp.SearchViewController.(searchPictures in _95BA883D2095A12023DC6790A70FFFB4)(Swift.String) -&gt; ()"
+                  moduleName = "PicturesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexkoblik-zelter/Desktop/TI/PicturesApp/PicturesApp/Controllers/Search/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "95BCB0F3-6CA5-4538-BF7E-15A7266DF53E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicturesApp/Services/Strategy/SearchContext.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getPictures(name:handler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "95BCB0F3-6CA5-4538-BF7E-15A7266DF53E - d6dca298f1b86cba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PicturesApp.SearchContext.getPictures(name: Swift.String, handler: (Swift.Array&lt;PicturesApp.Picture&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PicturesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexkoblik-zelter/Desktop/TI/PicturesApp/PicturesApp/Services/Strategy/SearchContext.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "95BCB0F3-6CA5-4538-BF7E-15A7266DF53E - 6055ef1054727279"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;PicturesApp.Picture&gt;) -&gt; () in PicturesApp.SearchContext.getPictures(name: Swift.String, handler: (Swift.Array&lt;PicturesApp.Picture&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PicturesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexkoblik-zelter/Desktop/TI/PicturesApp/PicturesApp/Services/Strategy/SearchContext.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "41">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ABFEC16E-4AEB-4DCC-8D30-2210281C2F9E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicturesApp/Services/Strategy/FirebaseStrategy.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "getPictures(name:handler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ABFEC16E-4AEB-4DCC-8D30-2210281C2F9E - 3d4ef71b7e322a5c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PicturesApp.FirebaseStrategy.getPictures(name: Swift.String, handler: (Swift.Array&lt;PicturesApp.Picture&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PicturesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexkoblik-zelter/Desktop/TI/PicturesApp/PicturesApp/Services/Strategy/FirebaseStrategy.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "61">
+               </Location>
+               <Location
+                  uuid = "ABFEC16E-4AEB-4DCC-8D30-2210281C2F9E - b4bc2e47aa36faa6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;PicturesApp.Picture&gt;) -&gt; () in PicturesApp.FirebaseStrategy.getPictures(name: Swift.String, handler: (Swift.Array&lt;PicturesApp.Picture&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PicturesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexkoblik-zelter/Desktop/TI/PicturesApp/PicturesApp/Services/Strategy/FirebaseStrategy.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0092FCEB-E8F9-460B-8759-E788801AC391"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicturesApp/Services/Strategy/FirebaseStrategy.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "getPictures(name:handler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

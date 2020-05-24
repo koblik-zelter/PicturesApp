@@ -13,6 +13,7 @@ target 'PicturesApp' do
 	pod "FlagPhoneNumber"
 	pod 'SkyFloatingLabelTextField', '~> 3.0'
 	pod 'MaterialComponents/Chips'
+	pod 'lottie-ios'
   target 'PicturesAppTests' do
     inherit! :search_paths
     # Pods for testing

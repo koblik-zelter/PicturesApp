@@ -11,20 +11,35 @@ import MessageUI
 
 class AuthFacade {
     static let shared = AuthFacade()
+    
     private init() { }
     
-    func auth(user: Author, email: String, password: String, handler: @escaping(Result<String, Error>) -> Void) {
-        let authService = MailAuthService()
+    func register(email: String, password: String, userDetails: UserDetails, handler: @escaping(Error?) -> Void) {
         
-        authService.auth(email: email, password: password) { (result) in
+        MailAuthService.shared.createUser(email: email, password: password) { (result) in
             switch result {
-            case.success(let user):
-                DatabaseManager.shared.createUser(user: user)
-                break
-            case.failure(let err):
-                handler(.failure(err))
-                break
+                case.success(let firebaseUser):
+                    DatabaseManager.shared.createUser(uid: firebaseUser.uid, userData: userDetails) { (err) in
+                        if let err = err {
+                            handler(err)
+                            return
+                        }
+                        handler(nil)
+                    }
+                case.failure(let err):
+                    handler(err)
+                    break
             }
+        }
+    }
+    
+    func auth(email: String, password: String, handler: @escaping(Error?) -> Void) {
+        MailAuthService.shared.auth(email: email, password: password) { (err) in
+            if let error = err {
+                handler(error)
+                return
+            }
+            handler(nil)
         }
     }
 }

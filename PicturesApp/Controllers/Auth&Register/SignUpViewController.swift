@@ -8,7 +8,7 @@
 
 import UIKit
 import SkyFloatingLabelTextField
-
+import Lottie
 class SignUpViewController: UIViewController {
     
     private let signUpLabel: UILabel = {
@@ -26,23 +26,23 @@ class SignUpViewController: UIViewController {
     }()
     
     private let emailTextField: RegistrSkyTextField = {
-        let tf = RegistrSkyTextField(title: "Email")
+        let tf = RegistrSkyTextField(title: "Email *")
         return tf
     }()
     
     private let passwordTextField: RegistrSkyTextField = {
-        let tf = RegistrSkyTextField(title: "Password")
+        let tf = RegistrSkyTextField(title: "Password *")
         tf.isSecureTextEntry = true
         return tf
     }()
     
     private let userFirstNameTextField: RegistrSkyTextField = {
-        let tf = RegistrSkyTextField(title: "First name")
+        let tf = RegistrSkyTextField(title: "First name *")
         return tf
     }()
     
     private let userSecondNameTextField: RegistrSkyTextField = {
-        let tf = RegistrSkyTextField(title: "Second name")
+        let tf = RegistrSkyTextField(title: "Second name *")
         return tf
     }()
     
@@ -140,10 +140,23 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func signUp() {
-        let user = Author(id: "1", name: "test", description: "dsfsdf", imageLink: "fdsfds", linkedinURL: "sdffds", behanceURL: "dsfdf")
-        AuthFacade.shared.auth(user: user, email: emailTextField.text!, password: passwordTextField.text!) { (result) in
-            print("did finish")
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text,
+            let userFirstName = userFirstNameTextField.text,
+            let userSecondName = userSecondNameTextField.text else { return }
+        
+        //optional
+        let linkedInUrl = linkedInURL.text
+        let behanceUrl = behanceURL.text
+    
+        let userDetails = UserDetails(firstName: userFirstName, secondName: userSecondName, linkedinURL: linkedInUrl, behanceURL: behanceUrl)
+        AuthFacade.shared.register(email: email, password: password, userDetails: userDetails) { (err) in
+            if let error = err {
+                self.showAlert(title: "Registration Error", message: error.localizedDescription, action: "Ok")
+                return
+            }
+            
+            self.dismiss(animated: true, completion: nil)
         }
     }
-
 }

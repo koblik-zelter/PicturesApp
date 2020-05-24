@@ -8,11 +8,16 @@
 
 import Foundation
 
-struct Author {
+struct Author: Codable {
     var id: String
-    var name: String
-    var description: String?
-    var imageLink: String
+    var userDetails: UserDetails
+
+}
+
+struct UserDetails: Codable {
+    var firstName: String
+    var secondName: String
+    var imageLink: String?
     var linkedinURL: String?
     var behanceURL: String?
 }
