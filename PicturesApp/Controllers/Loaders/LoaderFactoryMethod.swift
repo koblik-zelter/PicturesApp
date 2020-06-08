@@ -23,8 +23,6 @@ class LoaderFactory {
         case .lottie:
             self.loader = LottieLoaderViewController()
             break
-        case .native:
-            break
         }
         return self.loader
     }

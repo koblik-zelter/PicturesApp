@@ -10,27 +10,27 @@ import UIKit
 
 class TodayCollectionHandler: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-//    var movies: [Movie] = []
+    var pictures: [Picture] = []
     
-  /*  func appendMovies(movies: [Movie]) {
-        self.movies.removeAll()
-        self.movies.append(contentsOf: movies)
-    }*/
+    func appendPictures(pictures: [Picture]) {
+        self.pictures.removeAll()
+        self.pictures.append(contentsOf: pictures)
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return pictures.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "todayCellId", for: indexPath) as? PopularCell else { return UICollectionViewCell() }
-//        cell.movie = movies[indexPath.item]
+        cell.picture = pictures[indexPath.item]
         return cell
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width * 2 / 3
-        let height = width * 1.25
+        let width = collectionView.bounds.width / 2 - 32
+        let height = width * 1.5
         return CGSize(width: width, height: height)
     }
 

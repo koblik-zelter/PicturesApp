@@ -94,7 +94,6 @@ class ViewController: UIViewController {
         stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16).isActive = true
         stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16).isActive = true
         stackView.heightAnchor.constraint(equalToConstant: 116).isActive = true
-//        loginButton.addTarget(self, action: #selector(signIn), for: .touchUpInside)
     }
     
     private func configureSignInButton() {
@@ -132,7 +131,7 @@ class ViewController: UIViewController {
                 self.showAlert(title: "Authentication Error", message: error.localizedDescription, action: "Ok")
                 return
             }
-            
+            NotificationCenter.default.post(name: .init("didRegister"), object: nil)
             self.dismiss(animated: true, completion: nil)
         }
     }

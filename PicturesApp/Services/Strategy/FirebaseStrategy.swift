@@ -11,7 +11,10 @@ import Foundation
 class FirebaseStrategy: SearchStrategy {
     func getPictures(name: String, handler: @escaping ([Picture]) -> Void) {
         DatabaseManager.shared.getPost(name: name) { (pictures) in
-            print("Firebase")
+            guard let pictures = pictures else {
+                handler([])
+                return
+            }
             handler(pictures)
         }
     }

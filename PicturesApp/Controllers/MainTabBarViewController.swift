@@ -13,8 +13,8 @@ class MainTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUser()
         self.setupViews()
+        self.setupUser()
     }
     
     private func setupUser() {
@@ -27,32 +27,30 @@ class MainTabBarViewController: UITabBarController {
                 self.present(navController, animated: true)
             }
         }
-//        else { print(Auth.auth().currentUser?.uid) }
+        else {
+            UserManager.shared.set(user: Auth.auth().currentUser!)
+        }
     }
     
     private func setupViews() {
         let homeController = PopularViewController()
         let homeNavController = UINavigationController(rootViewController: homeController)
-        homeNavController.tabBarItem.title = "home"
-//        homeNavController.tabBarItem.image = UIImage(named: "home-0")
-        let searchController = SearchViewController()
+        homeNavController.tabBarItem.title = "Home"
+        homeNavController.tabBarItem.image = UIImage(named: "home")
+        UserManager.shared.add(subscriber: homeController)
+
+        let searchController = SearchCategoryViewController()
         let searchNavController = UINavigationController(rootViewController: searchController)
-        searchNavController.tabBarItem.title = "search"
-
-//        searchNavController.tabBarItem.image = UIImage(named: "cooking")
+        searchNavController.tabBarItem.title = "Search"
+        searchNavController.tabBarItem.image = UIImage(named: "search1")
         
-        let savedController = PopularViewController()
-        let savedNavController = UINavigationController(rootViewController: savedController)
-        savedNavController.tabBarItem.title = "saved"
-
-//        savedNavController.tabBarItem.image = UIImage(named: "pin")
-        
-        //        let aboutUsController = AboutUsViewController()
-        //        let aboutUsNavController = UINavigationController(rootViewController: aboutUsController)
-        //        aboutUsNavController.tabBarItem.image = UIImage(named: "profile-0")
-//        tabBar.tintColor = UIColor(named: "TabColor")
+        let userController = UserViewController()
+        let userNavController = UINavigationController(rootViewController: userController)
+        userNavController.tabBarItem.title = "Profile"
+        UserManager.shared.add(subscriber: userController)
+        userNavController.tabBarItem.image = UIImage(named: "profile")
         tabBar.isTranslucent = false
-        viewControllers = [homeNavController, searchNavController, savedNavController]
+        viewControllers = [homeNavController, searchNavController, userNavController]
     }
 
 }

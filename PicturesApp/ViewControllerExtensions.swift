@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SPAlert
 
 fileprivate var containerView: UIView!
+fileprivate var emptyView: UIView!
 
 extension UIViewController {
     func dismissKey() {
@@ -38,8 +40,19 @@ extension UIViewController {
         })
     }
     
+    func showDoneAlert(title: String) {
+        DispatchQueue.main.async {
+            let alert = SPAlertView(title: title, message: nil, preset: SPAlertPreset.done)
+            alert.duration = 3.0
+            alert.present()
+        }
+    }
+    
     func showAnimation() {
-        let vc = LoaderFactory.shared.getLoaderByType(.lottie)
+        let type = UserDefaults.standard.object(forKey: "loaderType") as? String ?? ""
+        let loaderType = LoaderType.init(rawValue: type) ?? LoaderType.activity
+        
+        let vc = LoaderFactory.shared.getLoaderByType(loaderType)
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true, completion: nil)
@@ -49,5 +62,17 @@ extension UIViewController {
     func dismissAnimation() {
         let vc = LoaderFactory.shared.getCurrentLoader()
         vc.stopAnimation()
+    }
+    
+    func showEmptyView(with message: String, in view: UIView) {
+        emptyView = EmptyStateView(message: message)
+        emptyView.frame = view.bounds
+        view.addSubview(emptyView)
+    }
+    
+    func removeEmptyView() {
+        if let emptyView = emptyView {
+            emptyView.alpha = 0
+        }
     }
 }

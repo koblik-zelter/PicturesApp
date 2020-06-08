@@ -9,13 +9,27 @@
 import UIKit
 
 class TodayCell: UICollectionViewCell {
+    
+    var picture: Picture? {
+        didSet {
+            guard let picture = picture else { return }
+            self.priceLabel.text = "$\(picture.initialPrice)"
+            self.pictureNameLabel.text = picture.title
+            ImageManager.shared.downloadImage(urlString: picture.imageLink) { (image) in
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                }
+            }
+        }
+    }
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 12
         imageView.clipsToBounds = true
         imageView.backgroundColor = .lightGray
-        imageView.image = UIImage(named: "a")
+//       imageView.image = UIImage(named: "a")
         return imageView
     }()
     

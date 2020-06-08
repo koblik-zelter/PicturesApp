@@ -10,10 +10,14 @@ target 'PicturesApp' do
 	pod 'Firebase/Core'
 	pod 'Firebase/Database'
 	pod 'Firebase/Auth'
+	pod 'Firebase/Storage'
 	pod "FlagPhoneNumber"
 	pod 'SkyFloatingLabelTextField', '~> 3.0'
 	pod 'MaterialComponents/Chips'
 	pod 'lottie-ios'
+	pod 'SPAlert'
+
+
   target 'PicturesAppTests' do
     inherit! :search_paths
     # Pods for testing

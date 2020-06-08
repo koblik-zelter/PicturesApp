@@ -11,10 +11,11 @@ import Foundation
 class FavoritesStrategy: SearchStrategy {
     func getPictures(name: String, handler: @escaping ([Picture]) -> Void) {
         DatabaseManager.shared.getPostFromFavorites(name: name) { (pictures) in
-            print("Favorites")
+            guard let pictures = pictures else {
+                handler([])
+                return
+            }
             handler(pictures)
         }
     }
-    
-    
 }

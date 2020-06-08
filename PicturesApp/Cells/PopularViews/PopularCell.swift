@@ -11,13 +11,25 @@ import UIKit
 class PopularCell: UICollectionViewCell {
     private var gradientView: UIView!
     
+    var picture: Picture? {
+        didSet {
+            guard let picture = picture else { return }
+            self.imageName.text = picture.title
+            ImageManager.shared.downloadImage(urlString: picture.imageLink) { (image) in
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                }
+            }
+        }
+    }
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 12
         imageView.clipsToBounds = true
-        imageView.backgroundColor = .lightGray
-        imageView.image = UIImage(named: "bwd")
+//        imageView.backgroundColor = .lightGray
+//        imageView.image = UIImage(named: "bwd")
         return imageView
     }()
     
@@ -39,7 +51,7 @@ class PopularCell: UICollectionViewCell {
     }
     
     private func setupViews() {
-        self.backgroundColor = .init(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
+        self.contentView.backgroundColor = .init(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
         self.configureGradient()
         self.configureImageView()
         self.configureImageName()

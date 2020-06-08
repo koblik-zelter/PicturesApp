@@ -13,8 +13,7 @@ protocol AnimationDelegate: class {
     func stopAnimation()
 }
 
-enum LoaderType {
-    case native
-    case lottie
-    case activity
+enum LoaderType: String {
+    case lottie = "Lottie"
+    case activity = "Activity"
 }

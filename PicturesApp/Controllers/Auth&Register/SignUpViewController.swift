@@ -146,16 +146,23 @@ class SignUpViewController: UIViewController {
             let userSecondName = userSecondNameTextField.text else { return }
         
         //optional
-        let linkedInUrl = linkedInURL.text
-        let behanceUrl = behanceURL.text
-    
-        let userDetails = UserDetails(firstName: userFirstName, secondName: userSecondName, linkedinURL: linkedInUrl, behanceURL: behanceUrl)
-        AuthFacade.shared.register(email: email, password: password, userDetails: userDetails) { (err) in
+        let userDetailsBuilder = UserBuilder(firstName: userFirstName, secondName: userSecondName)
+        
+        if let linkedInUrl = linkedInURL.text {
+            userDetailsBuilder.setLinkedin(url: linkedInUrl)
+        }
+        
+        if let behanceUrl = behanceURL.text {
+            userDetailsBuilder.setBehance(url: behanceUrl)
+        }
+
+        AuthFacade.shared.register(email: email, password: password, userDetails: userDetailsBuilder.getUserData()) { (err) in
             if let error = err {
                 self.showAlert(title: "Registration Error", message: error.localizedDescription, action: "Ok")
                 return
             }
             
+            NotificationCenter.default.post(name: .init("didRegister"), object: nil)
             self.dismiss(animated: true, completion: nil)
         }
     }

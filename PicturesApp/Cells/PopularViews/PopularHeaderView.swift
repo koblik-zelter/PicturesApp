@@ -36,13 +36,19 @@ class PopularHeaderView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .init(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
         self.setupViews()
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: Notification.Name("newTopPictures"), object: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    @objc private func reloadCollectionView() {
+        self.popularCollectionView.reloadData()
+    }
+    
     private func setupViews() {
         self.configureTodayLabel()
         self.configurePopularCollection()
@@ -57,12 +63,12 @@ class PopularHeaderView: UICollectionReusableView {
     
     private func configurePopularCollection() {
         self.addSubview(popularCollectionView)
-        popularCollectionView.topAnchor.constraint(equalTo: todayLabel.bottomAnchor, constant: 16).isActive = true
+        popularCollectionView.topAnchor.constraint(equalTo: todayLabel.bottomAnchor).isActive = true
         popularCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         popularCollectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         
-        let width = self.bounds.width * 2 / 3
-        let height = width * 1.25
+        let width = self.bounds.width / 2
+        let height = width * 1.5
         popularCollectionView.heightAnchor.constraint(equalToConstant: height).isActive = true
     }
     
